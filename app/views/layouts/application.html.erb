@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>能效管理中心</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+</head>
+<body>
+	<%= render 'layouts/header' %>
+	<main id="post-page" class="container-fluid content" role="main">
+		<div class="row">
+			<div class="col-md-2 sidebar"> 
+				<%= render 'layouts/iteam' %>
+			</div>
+			<div class="col-md-10 content-main">
+				<div class="main">
+					<%= yield %>
+				</div>
+				<%= render 'layouts/footer' %>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

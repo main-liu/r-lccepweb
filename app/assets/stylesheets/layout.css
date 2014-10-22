@@ -1,0 +1,103 @@
+body{margin-top:50px;}
+/*1:navbar*/
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-inverse {
+    background:#011327;
+    border-color: #242E38;
+}
+
+.navbar-inverse .navbar-nav > li> a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li> a:hover,
+.navbar-inverse .navbar-nav > li> a:focus {
+  color: red;
+  background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #080808;
+    color: red;
+}
+
+.navbar-inverse .navbar-nav > li .navbar-admin {
+    color: #F1C763
+}
+
+/*2:main*/
+.content{
+	background:#011327;
+	height: 100%;
+}
+
+
+
+.sidebar .list-group-item {
+    background-color: #011327;
+    border: 0px;
+    border-bottom: 1px solid #242E38;
+    display: block;
+    margin-bottom: 0px;
+    color: #456B8E;
+    padding-left: 50px;
+}
+
+.sidebar .list-group-item>a {
+    display: block;
+}
+
+.sidebar .list-group-item:hover  {
+    background-color: #428bca;
+    border-color: #428bca;
+    z-index: 2;
+}
+.sidebar .list-group-item:hover>a  {
+    color: #fff;
+}
+
+.sidebar .list-group-item.active, .sidebar .list-group-item.active:hover, .sidebar .list-group-item.active:focus {
+    background-color: #428bca;
+    border-color: #428bca;
+    z-index: 2;
+}
+.sidebar .list-group-item.active>a  {
+    color: #fff;
+}
+
+
+.col-sm-3, .col-md-2{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.content-main{
+	background:#010D1C;
+	height: 100%;
+}
+
+.main{
+	min-height:600px;    /*高度最小值设置为：100px*/
+}
+
+
+
+/*footer*/
+footer{
+margin-left: -10px;
+
+}
+#copyrights {
+    color: #555;
+    font-family: Arial,sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0 0 30px;
+    text-align: center;
+
+}

@@ -1,0 +1,37 @@
+<ul class="list-group">
+	<li class="<%= 'active' if params[:category]=='total' %> list-group-item ">
+	  	<%= link_to root_path(:category=>'total') do%>
+	  		总能耗 stt
+	  	<% end %>
+  	</li>
+
+	<li class="<%= 'active' if params[:category]=='electric' %>  list-group-item ">
+	  	<%=	link_to root_path(:category=>'electric') do %>
+	  		电量
+	  	<% end %>
+  	</li>
+	<li class="<%= 'active' if params[:category]=='water' %>  list-group-item ">
+	  	<%=	link_to root_path(:category=>'water') do %>
+	  		水量
+	  	<% end %>
+  	</li>
+	<li class="<%= 'active' if params[:category]=='gas' %>  list-group-item ">
+	  	<%=	link_to root_path(:category=>'gas') do %>
+	  		燃气
+	  	<% end %>
+  	</li>
+
+	
+
+  <li class="<%= 'active' if params[:category]=='heat' %>  list-group-item ">
+  	<%=	link_to root_path(:category=>'heat') do %>
+  		集中供热
+  	<% end %>
+  </li>
+
+  <li class="<%= 'active' if params[:category]=='cool' %>  list-group-item ">
+  	<%=	link_to root_path(:category=>'cool') do %>
+  		集中供冷
+  	<% end %>
+  </li>
+</ul>

@@ -1,0 +1,16 @@
+<%if params[:category] == "electric" %>
+			<h1>home#电量</h1>
+<%elsif params[:category] == "gas" %>
+			<h1>home#燃气</h1>
+<%elsif params[:category] == "water" %>
+			<h1>home#水</h1>
+<%elsif params[:category] == "heat" %>
+			<h1>home#集中供热</h1>
+<%elsif params[:category] == "cool" %>
+			<h1>home##集中供冷</h1>
+<%else params[:category] == "cool" %>
+			<h1>home#总能耗</h1>		
+
+	
+<%end%>
+
