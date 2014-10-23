@@ -1,36 +1,33 @@
-<ul class="list-group">
-	<li class="<%= 'active' if params[:category]=='total' %> list-group-item ">
-	  	<%= link_to root_path(:category=>'total') do%>
-	  		总能耗 eff
+<ul class="nav nav-pills  nav-stacked" role="tablist">
+	<li class="<%= 'active' if params[:category]=='total' %>">
+	  	<%= link_to monitor_index_path(:category=>'total') do%>
+	  		总能耗
 	  	<% end %>
   	</li>
 
-	<li class="<%= 'active' if params[:category]=='electric' %>  list-group-item ">
-	  	<%=	link_to root_path(:category=>'electric') do %>
+	<li class="<%= 'active' if params[:category]=='electric' %>">
+	  	<%=	link_to monitor_index_path(:category=>'electric') do %>
 	  		电量
 	  	<% end %>
   	</li>
-	<li class="<%= 'active' if params[:category]=='water' %>  list-group-item ">
-	  	<%=	link_to root_path(:category=>'water') do %>
+	<li class="<%= 'active' if params[:category]=='water' %>">
+	  	<%=	link_to monitor_index_path(:category=>'water') do %>
 	  		水量
 	  	<% end %>
   	</li>
-	<li class="<%= 'active' if params[:category]=='gas' %>  list-group-item ">
-	  	<%=	link_to root_path(:category=>'gas') do %>
+	<li class="<%= 'active' if params[:category]=='gas' %>">
+	  	<%=	link_to monitor_index_path(:category=>'gas') do %>
 	  		燃气
 	  	<% end %>
   	</li>
-
-	
-
-  <li class="<%= 'active' if params[:category]=='heat' %>  list-group-item ">
-  	<%=	link_to root_path(:category=>'heat') do %>
+  <li class="<%= 'active' if params[:category]=='heat' %>">
+  	<%=	link_to monitor_index_path(:category=>'heat') do %>
   		集中供热
   	<% end %>
   </li>
 
-  <li class="<%= 'active' if params[:category]=='cool' %>  list-group-item ">
-  	<%=	link_to root_path(:category=>'cool') do %>
+  <li class="<%= 'active' if params[:category]=='cool' %>">
+  	<%=	link_to monitor_index_path(:category=>'cool') do %>
   		集中供冷
   	<% end %>
   </li>

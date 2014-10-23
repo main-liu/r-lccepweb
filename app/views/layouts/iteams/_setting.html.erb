@@ -1,37 +1,23 @@
-<ul class="list-group">
-	<li class="<%= 'active' if params[:category]=='total' %> list-group-item ">
-	  	<%= link_to root_path(:category=>'total') do%>
-	  		总能耗 stt
+<ul class="nav nav-pills  nav-stacked" role="tablist">
+	<li class="<%= 'active' if controller_name=="imports" %>">
+	  	<%= link_to insert_imports_path do%>
+	  		人工数据导入
 	  	<% end %>
   	</li>
-
-	<li class="<%= 'active' if params[:category]=='electric' %>  list-group-item ">
-	  	<%=	link_to root_path(:category=>'electric') do %>
-	  		电量
+	<li class="<%= 'active' if controller_name=="setting"&&action_name=="query" %>">
+	  	<%=	link_to setting_query_path do %>
+	  		原始数据查询
 	  	<% end %>
   	</li>
-	<li class="<%= 'active' if params[:category]=='water' %>  list-group-item ">
-	  	<%=	link_to root_path(:category=>'water') do %>
-	  		水量
+	<li class="<%= 'active' if params[:category]=='water' %>">
+	  	<%=	link_to setting_index_path(:category=>'water') do %>
+	  		建筑属性管理
 	  	<% end %>
   	</li>
-	<li class="<%= 'active' if params[:category]=='gas' %>  list-group-item ">
-	  	<%=	link_to root_path(:category=>'gas') do %>
-	  		燃气
+	<li class="<%= 'active' if params[:category]=='gas' %>">
+	  	<%=	link_to setting_index_path(:category=>'gas') do %>
+	  		用户管理
 	  	<% end %>
   	</li>
-
-	
-
-  <li class="<%= 'active' if params[:category]=='heat' %>  list-group-item ">
-  	<%=	link_to root_path(:category=>'heat') do %>
-  		集中供热
-  	<% end %>
-  </li>
-
-  <li class="<%= 'active' if params[:category]=='cool' %>  list-group-item ">
-  	<%=	link_to root_path(:category=>'cool') do %>
-  		集中供冷
-  	<% end %>
-  </li>
+  
 </ul>

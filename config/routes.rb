@@ -1,7 +1,22 @@
 RLccepweb::Application.routes.draw do
+
+
+  #get "setting/query"
+  resources :setting do
+    collection do
+      get :query
+
+    end
+  end
   resources :setting do
       collection do
-        #get :tigers
+
+        resources :imports do
+          collection do
+            get 'new'
+            get 'insert'
+          end
+        end  
       end
   end
 
