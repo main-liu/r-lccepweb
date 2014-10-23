@@ -1,13 +1,9 @@
 RLccepweb::Application.routes.draw do
 
 
-  #get "setting/query"
-  resources :setting do
-    collection do
-      get :query
+  get "setting/query"
 
-    end
-  end
+
   resources :setting do
       collection do
 
