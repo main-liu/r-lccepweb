@@ -2,6 +2,13 @@ body{margin-top:50px;}
 a { 
 outline: none;
 } 
+
+select {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    width: 220px;
+}
+
 /*1:navbar*/
 .navbar {
     margin-bottom: 0px;
@@ -31,6 +38,35 @@ outline: none;
 
 .navbar-inverse .navbar-nav > li .navbar-admin {
     color: #F1C763
+}
+
+
+.weather_li {
+    color: #fff;
+    overflow: hidden;
+    padding-top: 10px;
+}
+.weather_li, .weather_li div, .weather_li div img {
+    float: left;
+    overflow: hidden;
+}
+
+#weather_detail {
+    float: left;
+    font-size: 12px;
+    padding-top: 8px;
+}
+
+#weather_image {
+    float: left;
+    padding-left: 10px;
+    width: 42px;
+}
+img {
+    border: 0 none;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
 }
 
 /*2:main*/

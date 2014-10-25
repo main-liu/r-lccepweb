@@ -1,1 +1,96 @@
-query
+<div style="background:red">
+		<form  class="form-horizontal">
+			<fieldset>
+
+				<legend><br>Test</legend>
+	        <div class="form-group" >
+	          <label for="collector_build_id" class="col-md-2 control-label">建筑名称：</label>
+	     	<div class="input-group col-md-5">
+	            <select class="col-md-8" id="collector_build_id">
+	            	<option value="">请选择</option>
+					<option value="310101A018">中房华东大厦</option>
+					<option value="310101A028">上海林顿大厦</option>
+					<option value="310101B010">上海圣和圣广场</option>
+					<option value="310101B011">新七浦商厦</option>
+					<option value="310101B012">联富商厦</option>
+					<option value="310101H001">上海长途汽车客运总站</option>
+				</select>
+			 </div>
+	        </div>
+      
+	        <div class="form-group">
+	          <label  for="collector_type" class="col-md-2 control-label">仪表参数：</label>
+	          <div class="input-group col-md-5">
+	              <select class="col-md-8"  id="collector_type">
+	              	<option value="01">电能</option>
+					<option value="0D">功率</option>
+					<option value="03">A相电流</option>
+					<option value="04">B相电流</option>
+					<option value="05">C相电流</option>
+					<option value="06">供水温度</option>
+					<option value="07">回水温度</option>
+					<option value="08">累计流量</option>
+					<option value="09">总制冷量</option>
+					<option value="0A">总制热量</option>
+					<option value="0B">热表模式</option>
+					<option value="0C">流量</option>
+				  </select>
+			  </div>
+	        </div>
+
+		
+
+	        <div class="form-group">
+                <label for="start_date" class="col-md-2 control-label">开始时间</label>
+                <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="start_date">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+				<input type="hidden" id="start_date" value="" /	><br/>
+            </div>
+
+ 			
+
+			<div class="form-group">
+                <label for="end_date" class="col-md-2 control-label">开始时间</label>
+                <div class="input-group date form_datetime col-md-5" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="end_date">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+				<input type="hidden" id="end_date" value="" /><br/>
+            </div>
+
+	        <div class="form-group">
+	                <label for="end_date" class="col-md-2 control-label">开始时间</label>
+			        <div class="col-md-5">
+						<div class="input-append date form_datetime">
+						    <input class="form-control" size="16" type="text" value="" readonly>
+						    <span class="add-on"><i class="icon-th"></i></span>
+						</div>
+
+					</div>
+			</div>
+
+	        <div class="form-actions">
+	          <input type="submit" value="提交" name="commit" class="submit_btn btn btn-primary">
+	        </div>
+        </fieldset>
+	</form>
+
+</div>
+
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1
+    });
+	
+</script>

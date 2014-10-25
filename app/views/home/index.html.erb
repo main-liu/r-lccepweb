@@ -1,16 +1,117 @@
-<%if params[:category] == "electric" %>
-			<h1>home#电量</h1>
-<%elsif params[:category] == "gas" %>
-			<h1>home#燃气</h1>
-<%elsif params[:category] == "water" %>
-			<h1>home#水</h1>
-<%elsif params[:category] == "heat" %>
-			<h1>home#集中供热</h1>
-<%elsif params[:category] == "cool" %>
-			<h1>home##集中供冷</h1>
-<%else params[:category] == "cool" %>
-			<h1>home#总能耗</h1>		
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4&ak=630546b00d1f14383afb4ada371751e0"></script>
 
-	
-<%end%>
+<script type="text/javascript">
+function setProvinceMark(id, level,name,provinceId,posX,posY,long_x,lat,map)
+    {
+                        var myIcon;
+                        index = 5;
+                        switch (level) {
+                            case "1":
+                                myIcon = new BMap.Icon("/assets/green.png", new BMap.Size(23, 25), {  
+                                 }); 
+                                break;
+                            case "2":
+                                myIcon = new BMap.Icon("/assets/cyan.png", new BMap.Size(23, 25), {  
+                                 }); 
+                                break;
+                            case "3":
+                                myIcon = new BMap.Icon("/assets/yellow.png", new BMap.Size(23, 25), {  
+                                 }); 
+                                break;
+                            case "4":
+                                myIcon = new BMap.Icon("/assets/orange.png", new BMap.Size(23, 25), {  
+                                 }); 
+                                break;
+                            case "5":
+                                myIcon = new BMap.Icon("/assets/red.png", new BMap.Size(23, 25), {  
+                                 });
+                                break;
+                            default:
+                                myIcon = new BMap.Icon("/assets/green.png", new BMap.Size(23, 25), {  
+                                 });
+                        }
+                        var point;
+                        point = new BMap.Point(long_x, lat);
+                        var marker = new BMap.Marker(point, {icon: myIcon});
+                        var myCompOverlay = new ComplexCustomOverlay(new BMap.Point(long_x,lat));
+                        map.addOverlay(myCompOverlay);
+                        marker.addEventListener("click",function(e){
+                            var version = $.browser.version;
+                            if($.browser.msie&&version != "10.0")
+                            {
+                                $(".quickflip-wrapper").quickFlipper(
+                                {
+                                    openSpeed:500
+                                });
+                            }else
+                            {
+                                $(".card").addClass('flip');
+                            }
+                            renderDetailBuild(id,long_x,lat,myIcon,name);
+                            $(".jcarousel-control-btn").addClass("jcarousel-control-play");
+                            // $(".carousel").jcarouselAutoscroll('stop');
+                            $(".carousel").jcarousel('scrollIntoView', 0);
+                            // $(".carousel-wrapper a").css("left",);
+                            $(".carousel-control-prev").css("left","80%");
+                            $(".jcarousel-control-pause").css("left","85%");
+                            $(".jcarousel-control-play").css("left","85%");
+                            $(".carousel-control-next").css("left","90%");
+                            $(".switchable-triggerBox").hide();
+                            $(".report_text_div").show();
+                            $("#first_c").hide();
+                            $("#sec_c").show();
+                            // var items = $('.carousel').jcarousel('items');
+                            // for(var i=0;i<items.length;i++)
+                            // {
+                            //     $(items[i]).remove();
+                            // }
+                            // alert($("#sec_carousel").first().html());
+                            // $(".carousel ul").append($("#sec_carousel").first().html()).append($("#sec_carousel").last().html());
+                            var total_area = parseFloat($(".build_tr_total_area_"+id).text());
+                            var per_area = parseFloat($(".build_tr_energy_per_build_area_"+id).text());
+                            var total = total_area*per_area
+                            rebuildCarousel(id,total,"<%=params[:type]%>");
+                            // $('.carousel').jcarousel('reload');
+                            // $("#builds_panel").slideToggle("fast");
+                            $(".build_tr").hide();
+                            var build_id_show = ".build_tr_"+id;
+                            $(build_id_show).show();
+                            rebuildTableHead(id);
+                            $("#floatRightMenu").hide();
+                            $("#floatLeftMenu").hide();
+                            false;
+                            // rebuildCarousel(id);
+                            // $(".carousel").jcarousel($(".jcarousel").data()).jcarousel('reload');
+                            // $(".carousel").jcarouselAutoscroll('start');
+                            // setMarKinMap(id+"-new",level,name,posX,posY,provinceId);
+                        })
+                        marker.addEventListener("mouseover",function(e){
+                            $(myCompOverlay._div).show();
+                            if(!$(myCompOverlay._span).hasClass("name_loaded"))
+                            {
+                                $(myCompOverlay._span).addClass("name_loaded");
+                                $(myCompOverlay._span).append(name);
+                            }
+                        })
+                        marker.addEventListener("mouseout",function(e){
+                            $(myCompOverlay._div).hide();
+                        });
+                        map.addOverlay(marker); 
+    }
+</script>
+<div id="allmap" style="width:450px;height: 450px;"></div>
 
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");    // 创建Map实例
+	map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+	map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+	map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+
+       
+    $(document).ready(function () {
+        setProvinceMark("12345", "2", "build_name","province_id",116.404, 39.915,33, 33,mp);
+     });
+
+
+</script>

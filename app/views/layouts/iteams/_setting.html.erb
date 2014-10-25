@@ -14,8 +14,8 @@
 	  		建筑属性管理
 	  	<% end %>
   	</li>
-	<li class="<%= 'active' if params[:category]=='gas' %>">
-	  	<%=	link_to setting_index_path(:category=>'gas') do %>
+	<li class="<%= 'active' if controller_name=="users"&&action_name=="index" %>">
+	  	<%=	link_to users_index_path do %>
 	  		用户管理
 	  	<% end %>
   	</li>

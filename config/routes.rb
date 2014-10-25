@@ -1,6 +1,10 @@
 RLccepweb::Application.routes.draw do
 
 
+  get "users/index"
+
+  get "users/new"
+
   get "setting/query"
 
 
@@ -11,6 +15,13 @@ RLccepweb::Application.routes.draw do
           collection do
             get 'new'
             get 'insert'
+          end
+        end  
+
+        resources :users do
+          collection do
+            get 'new'
+            
           end
         end  
       end

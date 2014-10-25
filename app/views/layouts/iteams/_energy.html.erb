@@ -1,34 +1,34 @@
 <ul class="nav nav-pills  nav-stacked" role="tablist">
 	<li class="<%= 'active' if params[:category]=='total' %>">
-	  	<%= link_to monitor_index_path(:category=>'total') do%>
-	  		总能耗
+	  	<%= link_to energy_index_path(:category=>'total') do%>
+	  		总能耗分析
 	  	<% end %>
   	</li>
 
 	<li class="<%= 'active' if params[:category]=='electric' %>">
-	  	<%=	link_to monitor_index_path(:category=>'electric') do %>
-	  		电量
+	  	<%=	link_to energy_index_path(:category=>'electric') do %>
+	  		电量分析
 	  	<% end %>
   	</li>
 	<li class="<%= 'active' if params[:category]=='water' %>">
-	  	<%=	link_to monitor_index_path(:category=>'water') do %>
-	  		水量
+	  	<%=	link_to energy_index_path(:category=>'water') do %>
+	  		水量分析
 	  	<% end %>
   	</li>
 	<li class="<%= 'active' if params[:category]=='gas' %>">
-	  	<%=	link_to monitor_index_path(:category=>'gas') do %>
-	  		燃气
+	  	<%=	link_to energy_index_path(:category=>'gas') do %>
+	  		燃气分析
 	  	<% end %>
   	</li>
   <li class="<%= 'active' if params[:category]=='heat' %>">
-  	<%=	link_to monitor_index_path(:category=>'heat') do %>
-  		集中供热
+  	<%=	link_to energy_index_path(:category=>'heat') do %>
+  		集中供热耗热量分析
   	<% end %>
   </li>
 
   <li class="<%= 'active' if params[:category]=='cool' %>">
-  	<%=	link_to monitor_index_path(:category=>'cool') do %>
-  		集中供冷
+  	<%=	link_to energy_index_path(:category=>'cool') do %>
+  		集中供冷耗冷量分析
   	<% end %>
   </li>
 </ul>

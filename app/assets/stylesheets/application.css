@@ -11,6 +11,7 @@
  *= require_self
 
  *= require bootstrap.min.css
+ *= require bootstrap-datetimepicker.min.css
  *= require layout.css
  */
 

@@ -1,34 +1,8 @@
 <ul class="nav nav-pills  nav-stacked" role="tablist">
 	<li class="<%= 'active' if params[:category]=='total' %>">
-	  	<%= link_to monitor_index_path(:category=>'total') do%>
-	  		总能耗
+	  	<%= link_to notice_index_path(:category=>'total') do%>
+	  		告警事件
 	  	<% end %>
   	</li>
 
-	<li class="<%= 'active' if params[:category]=='electric' %>">
-	  	<%=	link_to monitor_index_path(:category=>'electric') do %>
-	  		电量
-	  	<% end %>
-  	</li>
-	<li class="<%= 'active' if params[:category]=='water' %>">
-	  	<%=	link_to monitor_index_path(:category=>'water') do %>
-	  		水量
-	  	<% end %>
-  	</li>
-	<li class="<%= 'active' if params[:category]=='gas' %>">
-	  	<%=	link_to monitor_index_path(:category=>'gas') do %>
-	  		燃气
-	  	<% end %>
-  	</li>
-  <li class="<%= 'active' if params[:category]=='heat' %>">
-  	<%=	link_to monitor_index_path(:category=>'heat') do %>
-  		集中供热
-  	<% end %>
-  </li>
-
-  <li class="<%= 'active' if params[:category]=='cool' %>">
-  	<%=	link_to monitor_index_path(:category=>'cool') do %>
-  		集中供冷
-  	<% end %>
-  </li>
 </ul>

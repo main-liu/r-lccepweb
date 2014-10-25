@@ -6,23 +6,30 @@
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if controller_name=='home'%>">
           <a href="/">能耗总览</a></li>        
-        <li class="<%= 'active' if controller_name=='monitor'%>">
-          <a href="/monitor">运行监测</a></li>       
+        
         <li class="<%= 'active' if controller_name=='energy'%>">
           <a href="/energy">能耗分析</a></li>        
         <li class="<%= 'active' if controller_name=='efficiency'%>">
           <a href="/efficiency">能效分析</a></li>         
         <li class="<%= 'active' if controller_name=='diagnosis_optimization'%>">
           <a href="/diagnosis_optimization">诊断优化</a></li>
+        <li class="<%= 'active' if controller_name=='monitor'%>">
+          <a href="/monitor">运行监测</a></li>       
         <li class="<%= 'active' if controller_name=='notice'%>">
           <a href="/notice">告警事件</a></li>  
-        <li class="<%= 'active' if controller_name=='setting'||controller_name=='imports'%>">
+        <li class="<%= 'active' if controller_name=='setting'||controller_name=='imports'||controller_name=='users'%>">
           <a href="/setting">系统工具</a></li>
       </ul>
 
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li>
+          <div class="weather_li">
+                <img style="" src="/assets/cloudy.png" id="weather_image">
+                <div id="weather_detail">上海,&nbsp;多云,&nbsp;23℃</div>
+          </div>
+        </li>
+        <li><a href="#"></a></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle navbar-admin" data-toggle="dropdown">管理员 <span class="caret"></span></a>

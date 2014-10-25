@@ -1,2 +1,38 @@
-<h1>Energy#index</h1>
-<p>Find me in app/views/energy/index.html.erb</p>
+<%if params[:category] == "electric" %>
+		<div id="chartContainer">FusionCharts will load here!</div>
+
+<script type="text/javascript">
+ var DataJSON = {
+	 	"chart":{
+		     "caption":"Weekly Sales Summary",
+		     "xaxisname":"Week",
+		     "yaxisname":"Sales",
+		     "numberprefix":"$"
+	     },
+	     "data":[
+	     	{"label":"Week 1","value":"14400"},
+	      	{"label":"Week 2","value":"19600" },
+	      	{"label":"Week 3","value":"24000"},
+	       	{"label":"Week 4","value":"15700"}
+	      ]
+    };
+
+    var myChart = new FusionCharts( "/Charts/Column3D.swf", "myChartId", "400", "300");
+    myChart.setChartData(DataJSON, 'json');
+    myChart.render( "chartContainer" );
+</script>
+
+
+		
+<%elsif params[:category] == "gas" %>
+			<h1><%= @text %></h1>
+<%elsif params[:category] == "water" %>
+			<h1><%= @text %></h1>
+<%elsif params[:category] == "heat" %>
+			<h1><%= @text %></h1>
+<%elsif params[:category] == "cool" %>
+			<h1><%= @text %></h1>
+<%else params[:category] == "cool" %>
+			<h1><%= @text %></h1>		
+<%end%>
+
