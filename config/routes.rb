@@ -1,6 +1,10 @@
 RLccepweb::Application.routes.draw do
 
 
+  get "builds/index"
+
+  get "builds/admins"
+
   get "users/index"
 
   get "users/new"

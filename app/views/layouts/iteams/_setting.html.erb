@@ -9,8 +9,8 @@
 	  		原始数据查询
 	  	<% end %>
   	</li>
-	<li class="<%= 'active' if params[:category]=='water' %>">
-	  	<%=	link_to setting_index_path(:category=>'water') do %>
+	<li class="<%= 'active' if controller_name=="builds" %>">
+	  	<%=	link_to builds_index_path do %>
 	  		建筑属性管理
 	  	<% end %>
   	</li>
